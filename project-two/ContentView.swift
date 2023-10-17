@@ -30,7 +30,6 @@ struct ContentView: View {
     var body: some View {
         Text(data)
             .onAppear {
-                // Aqui você pode usar Alamofire para fazer uma requisição GET usando responseDecodable
                 AF.request("https://api.github.com/users/apaulinhacarlos").responseDecodable(of: GitHubUser.self) { response in
                     switch response.result {
                     case .success(let user):
